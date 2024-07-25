@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #141E30; /* Fallback for older browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  .snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+    opacity: 0.8;
+  }
+  
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  .container {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    width: 20%; /* Adjusted width for mobile devices */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Box shadow for the container */
+  }
+  
+  .container-image {
+    width: 100%; /* Reduce image width */
+    height: auto;
+    display: block; /* Ensures no extra space below the image */
+    margin: 0 auto; /* Center the image */
+    border-radius: 10px; /* Rounded corners for the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
+  }
+  
+  .congrats-note {
+    margin: 15px 0;
+    font-size: 1.5em;
+    color: #eef1f1; /* Darker color for the text */
+  }
+  
+  #get-me-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #85aab4;;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+  }
+  
+  #get-me-btn:hover {
+    background-color: #85aab4; /* Hover effect color */
+  }
+  
+  #modal, #thank-you-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #c6e0e8;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Adjusted width for mobile devices */
+    max-width: 500px;
+  }
+  
+  .close {
+    color: #020202;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5em;
+    color: #0d2323;
+    margin-bottom: 20px;
+  }
+  
+  .option-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #dfe9ec; /* Custom button color */
+    color: #0f1414;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+  }
+
+  .option-btn:hover {
+    background-color: #b6e7ed; /* Hover effect color */
+  }
+  
+  .option-btn:active {
+    background-color: #85aab4; /* Active effect color */
+  }
+  
+  .thank-you-note {
+    font-size: 1.2em;
+    color: #0d2323;
+    margin-bottom: 20px;
+  }
+  
+  /* Media queries for mobile devices */
+  
+  @media only screen and (max-width: 768px) {
+   .container {
+      width: 20%; /* Adjusted width for smaller screens */
+      margin: 10px auto; /* Add some margin for smaller screens */
+    }
+   .container-image {
+      width: 100%; /* Reduce image width for smaller screens */
+      height: auto;
+    }
+   .congrats-note {
+      font-size: 1.2em; /* Reduce font size for smaller screens */
+    }
+    #get-me-btn {
+      padding: 8px 15px; /* Reduce button size for smaller screens */
+      font-size: 1em; /* Reduce font size for smaller screens */
+    }
+   .modal-content {
+      width: 90%; /* Adjusted width for smaller screens */
+      margin: 15% auto; /* Add some margin for smaller screens */
+    }
+   .option-btn {
+      padding: 8px; /* Reduce button size for smaller screens */
+      font-size: 1em; /* Reduce font size for smaller screens */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+   .container {
+      width: 20%; /* Adjusted width for very small screens */
+      margin: 5px auto; /* Add some margin for very small screens */
+    }
+   .container-image {
+      width: 100%; /* Reduce image width for very small screens */
+      height: auto;
+    }
+   .congrats-note {
+      font-size: 1em; /* Reduce font size for very small screens */
+    }
+    #get-me-btn {
+      padding: 5px 10px; /* Reduce button size for very small screens */
+      font-size: 0.8em; /* Reduce font size for very small screens */
+    }
+   .modal-content {
+      width: 95%; /* Adjusted width for very small screens */
+      margin: 20% auto; /* Add some margin for very small screens */
+    }
+   .option-btn {
+      padding: 5px; /* Reduce button size for very small screens */
+      font-size: 0.8em; /* Reduce font size for very small screens */
+    }
+  }
+  
+  
